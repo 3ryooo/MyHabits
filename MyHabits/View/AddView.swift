@@ -20,7 +20,7 @@ struct AddView: View {
             .navigationTitle("習慣の追加")
             .toolbar {
                 Button("保存") {
-                    let item = Activity(name: title, description: description)
+                    let item = Activity(name: title, description: description, habitCount: 1)
                     activities.items.append(item)
                     dismiss()
                 }

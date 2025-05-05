@@ -22,16 +22,28 @@ struct ItemView: View {
                  } header: {
                     Text("説明")
                 }
+                Section {
+                    Text("合計：\(activity.habitCount)回")
+                } header: {
+                    Text("習慣の回数")
+                }
+                
             }
-            
+            .toolbar {
+                Button("1回追加") {
+                    //
+                }
+            }
         }
+        
     }
 }
 
 #Preview {
     let previewActivity = Activity(
         name: "test",
-        description: "test"
+        description: "test",
+        habitCount: 1
     )
     
     ItemView(activity: previewActivity)
