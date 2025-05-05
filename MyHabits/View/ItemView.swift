@@ -43,9 +43,6 @@ struct ItemView: View {
                     
                     
                 }
-                Button("debug") {
-                    print(activities.items)
-                }
             }
         }
         

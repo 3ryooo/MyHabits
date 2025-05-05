@@ -33,11 +33,6 @@ struct ContentView: View {
                     }
                     
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("debug") {
-                        print(activities.items)
-                    }
-                }
                 
             }
         }
