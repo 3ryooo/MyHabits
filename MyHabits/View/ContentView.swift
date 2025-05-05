@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 ForEach(activities.items) { item in
                     NavigationLink("\(item.name)") {
-                        ItemView(activity: item)
+                        ItemView(activity: item, activities: activities)
                     }
                    
                 }
@@ -31,7 +31,14 @@ struct ContentView: View {
                     Button("追加") {
                         showingSheet = true
                     }
+                    
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("debug") {
+                        print(activities.items)
+                    }
+                }
+                
             }
         }
     }

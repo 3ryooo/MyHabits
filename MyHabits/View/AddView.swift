@@ -23,6 +23,7 @@ struct AddView: View {
                     let item = Activity(name: title, description: description, habitCount: 1)
                     activities.items.append(item)
                     dismiss()
+                    
                 }
             }
         }

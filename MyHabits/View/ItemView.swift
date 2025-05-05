@@ -7,6 +7,7 @@ import SwiftUI
 
 struct ItemView: View {
     let activity: Activity
+    var activities: Activities
     
     
     var body: some View {
@@ -31,7 +32,19 @@ struct ItemView: View {
             }
             .toolbar {
                 Button("1回追加") {
-                    //
+                    var tempActivity = activity
+                    tempActivity.habitCount += 1
+                    
+                    if let index = activities.items.firstIndex(of: activity) {
+                        activities.items[index] = tempActivity
+                    }
+                    
+                    print(activities.items)
+                    
+                    
+                }
+                Button("debug") {
+                    print(activities.items)
                 }
             }
         }
@@ -46,5 +59,5 @@ struct ItemView: View {
         habitCount: 1
     )
     
-    ItemView(activity: previewActivity)
+    ItemView(activity: previewActivity, activities: Activities())
 }
