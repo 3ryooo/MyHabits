@@ -33,13 +33,6 @@ struct ContentView: View {
     }
 }
 
-
-struct Activity: Identifiable {
-    let id = UUID()
-    let name: String
-    let description: String
-}
-
 @Observable
 class Activities {
     var items: [Activity] = []
