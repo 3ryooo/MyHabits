@@ -7,8 +7,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var showingSheet = false
     @State private var activities = Activities()
+    @State private var showingSheet = false
     
     
     var body: some View {
@@ -20,11 +20,11 @@ struct ContentView: View {
             }
             .padding()
             .sheet(isPresented: $showingSheet) {
-                addView()
+                AddView(activities: activities)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("add") {
+                    Button("追加") {
                         showingSheet = true
                     }
                 }
@@ -33,21 +33,18 @@ struct ContentView: View {
     }
 }
 
+
 struct Activity: Identifiable {
     let id = UUID()
     let name: String
+    let description: String
 }
 
+@Observable
 class Activities {
-    let items: [Activity] = []
+    var items: [Activity] = []
 }
 
-
-struct addView: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
 
 #Preview {
     ContentView()
