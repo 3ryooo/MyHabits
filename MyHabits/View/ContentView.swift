@@ -15,7 +15,10 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(activities.items) { item in
-                    Text(item.name)
+                    NavigationLink("\(item.name)") {
+                        ItemView(activity: item)
+                    }
+                   
                 }
                 .onDelete(perform: removeItems)
             }
