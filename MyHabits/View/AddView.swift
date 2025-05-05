@@ -22,6 +22,7 @@ struct AddView: View {
                 Button("保存") {
                     let item = Activity(name: title, description: description)
                     activities.items.append(item)
+                    dismiss()
                 }
             }
         }
