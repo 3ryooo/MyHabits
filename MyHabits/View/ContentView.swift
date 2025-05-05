@@ -17,6 +17,7 @@ struct ContentView: View {
                 ForEach(activities.items) { item in
                     Text(item.name)
                 }
+                .onDelete(perform: removeItems)
             }
             .padding()
             .sheet(isPresented: $showingSheet) {
@@ -31,7 +32,13 @@ struct ContentView: View {
             }
         }
     }
+    
+    func removeItems(at offsets: IndexSet) {
+        activities.items.remove(atOffsets: offsets)
+    }
 }
+
+
 
 @Observable
 class Activities {
