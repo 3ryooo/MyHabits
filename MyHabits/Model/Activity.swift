@@ -5,8 +5,8 @@
 
 import Foundation
 
-struct Activity: Identifiable, Equatable {
-    let id = UUID()
+struct Activity: Identifiable, Equatable, Codable {
+    var id = UUID()
     let name: String
     let description: String
     var habitCount: Int
